@@ -48,21 +48,25 @@ Implementation: utilized the DecisionTreeClassifier from the scikit-learn librar
 ### Model Evaluation:
 Based on the performance metrics and feature importance from both the Decision Tree and Logistic Regression models, here’s the evaluation:
 
-1. Logistic Regression Test Accuracy: 73% (hypothetical) Precision: 40% (hypothetical) Recall: 50% (hypothetical) F1 Score: 0.44 (hypothetical) ROC-AUC Score: 0.70 (hypothetical) Overall Ranking: 1st
-
-Better balance between precision and recall, along with a higher ROC-AUC score, indicates more reliable predictions.
-
-2. Decision Tree Test Accuracy: 77% Precision: 33% Recall: 55% F1 Score: 0.41 ROC-AUC Score: 0.66 Overall Ranking: 2nd
-
-Strong accuracy but struggles with precision and recall for churn predictions, leading to a lower F1 score and ROC-AUC score compared to Logistic Regression.
+LR: 0.8546 DT: 0.9070 Rank: DT > LR Precision:
+LR: 0.5000 DT: 0.6768 Rank: DT > LR Recall:
+LR: 0.1340 DT: 0.6907 Rank: DT > LR F1 Score:
+LR: 0.2114 DT: 0.6837 Rank: DT > LR ROC AUC:
+LR: 0.8264 DT: 0.8173 Rank: LR > DT
+● DT outperforms LR across most metrics, especially in terms of accuracy, precision,
+recall, and F1 score, indicating it's more reliable at distinguishing between churn and
+non-churn cases.
+● LR slightly outperforms DT in ROC AUC, suggesting it might have a marginally better
+ability to differentiate between the classes at different thresholds, though both models
+perform similarly in this aspect.
+● DT is a better overall model in this case, especially considering its higher accuracy and
+ability to identify both churners and non-churners effectively
 
 ### Summary of Rankings
+● DT is a better overall model in this case, especially considering its higher accuracy and
+ability to identify both churners and non-churners effectively
 
-Logistic Regression: Best overall due to higher precision, recall, and ROC-AUC score.
-Decision Tree: Good accuracy but weaker in precision and recall metrics
 Recommendation
-Model Selection: Consider using Logistic Regression for its better balance in precision and recall, alongside its interpretability. Use Decision Tree for insights and initial explorations of feature importance.
-
 Improvements: Explore ensemble methods (e.g., Random Forest, Gradient Boosting) to combine strengths of both models. Conduct further feature engineering and hyperparameter tuning to enhance predictive performance.
 
 Focus on Churn Predictions: Address the high false positive rates and improve recall for churn predictions to enhance retention strategies effectively.
